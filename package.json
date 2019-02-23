@@ -1,0 +1,22 @@
+{
+  "name": "ttn-simulator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vives-projectwerk2-2019/TTN-simulator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vives-projectwerk2-2019/TTN-simulator/issues"
+  },
+  "homepage": "https://github.com/vives-projectwerk2-2019/TTN-simulator#readme",
+  "dependencies": {
+    "mqtt": "^2.18.8"
+  }
+}
