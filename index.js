@@ -1,10 +1,11 @@
 var mqtt = require("mqtt")
-var client = mqtt.connect('mqtt://labict.be');
+require('dotenv').config()
+var client = mqtt.connect('mqtt://' + process.env.BROKER_HOST);
 
 client.on('connect', function () {
     button = {
-        action:4,
-        movement:5,
+        action:"X",
+        movement:"left",
         dev_id: "ttn_simulator"
     }
 

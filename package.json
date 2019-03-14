@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/vives-projectwerk2-2019/TTN-simulator#readme",
   "dependencies": {
+    "dotenv": "^6.2.0",
     "mqtt": "^2.18.8"
   }
 }
