@@ -17,13 +17,11 @@ client.on('connect', function () {
         dev_id: "ttn_simulator"
     }
 
-    client.publish('TTN', JSON.stringify(newhardware));
-    console.log('Publisher: Initial message Sent');
-
     setInterval(function() {
-        
+        client.publish('hardware', JSON.stringify(newhardware));
+        console.log('Publisher: Hardware message Sent');   
         client.publish('TTN', JSON.stringify(button));
-        console.log('Publisher: Message Sent');
+        console.log('Publisher: Data message Sent');
 
     }, 1000);
 });
