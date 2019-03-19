@@ -11,7 +11,7 @@ client.on('connect', function () {
 
     newhardware = {
         id: 1,
-        add_1:10 ,
+        add_1: 10,
         add_2: 20,
         add_3: 30,
         dev_id: "ttn_simulator"
