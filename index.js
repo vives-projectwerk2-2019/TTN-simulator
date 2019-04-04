@@ -21,7 +21,7 @@ client.on('connect', function () {
     console.log('Publisher: Hardware message Sent');   
     setInterval(function() {
      
-        client.publish('TTN', JSON.stringify(button));
+        client.publish('ttn', JSON.stringify(button));
         console.log('Publisher: Data message Sent');
 
     }, 1000);
