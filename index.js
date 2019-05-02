@@ -2,13 +2,11 @@ var mqtt = require("mqtt");
 require("dotenv").config();
 var client = mqtt.connect(process.env.PROTOCOL_BROKER + process.env.BROKER_HOST);
 
-client.on("connect", function() {
-  button = {
-    action: "x",
-    movement: "left",
-    dev_id: "ttn_simulator"
-  };
+let i = 0;
+let movements = ["backward", "left", "right", "forward"];
+let actions = ["x", "y", "a", "b"];
 
+client.on("connect", function() {
   newhardware = {
     id: "007592d3330a13ee",
     add_1: "0100548e2b3038f5",
@@ -20,7 +18,14 @@ client.on("connect", function() {
   client.publish("hardware", JSON.stringify(newhardware));
   console.log("Publisher: Hardware message Sent");
   setInterval(function() {
+
+    button = {
+      action: actions[parseInt(Math.random() * 4)],
+      movement: movements[parseInt(Math.random() * 4)],
+      dev_id: "ttn_simulator"
+    };
+    
     client.publish("ttn", JSON.stringify(button));
-    console.log("Publisher: Data message Sent");
-  }, 1000);
+    console.log("Publisher: Data message Sent", button);
+  }, 5000);
 });
